@@ -5,7 +5,8 @@ const defaults = {
     wrapper: 'nav',
     wrapperClass: 'toc',
     headingText: '',
-    headingTag: 'h2'
+    headingTag: 'h2',
+    olClass: 'test'
 };
 
 function getParent(prev, current) {
@@ -42,9 +43,9 @@ class Item {
         }
         if (this.children.length > 0) {
             markup += `
-                <ol>
+                <ul class="menu-list">
                     ${this.children.map(item => item.html()).join('\n')}
-                </ol>
+                </ul>
             `;
         }
 
